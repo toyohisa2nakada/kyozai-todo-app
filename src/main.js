@@ -331,7 +331,7 @@ ${html}
 async function loadProblems() {
   const loaded = [];
   for (const file of problemFiles) {
-    const mod = await import(/* @vite-ignore */ `/problems/${file}`);
+    const mod = await import(/* @vite-ignore */ `${import.meta.env.BASE_URL}problems/${file}`);
     loaded.push(mod.default);
   }
   return loaded;
